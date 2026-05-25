@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/concave_hull_2d.dir/concave_hull_2d.cpp.o"
-  "CMakeFiles/concave_hull_2d.dir/concave_hull_2d.cpp.o.d"
+  "CMakeFiles/concave_hull_2d.dir/src/concave_hull_2d.cpp.o"
+  "CMakeFiles/concave_hull_2d.dir/src/concave_hull_2d.cpp.o.d"
   "concave_hull_2d"
   "concave_hull_2d.pdb"
 )

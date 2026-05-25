@@ -69,7 +69,10 @@ main (int argc, char* argv[])
   viewer->addPolygonMesh<pcl::PointXYZ> (cloud_hull, vertices, "polygon");
   viewer->setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_COLOR, 0, 1, 0, "polygon");
   viewer->setRepresentationToWireframeForAllActors();
-  viewer->spin();
+  while (!viewer->wasStopped ())
+  {
+    viewer->spinOnce (100);
+  }
 
   return (0);
 }
