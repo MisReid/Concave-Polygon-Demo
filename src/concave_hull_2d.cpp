@@ -49,10 +49,10 @@ main (int argc, char* argv[])
 
   pcl::PCDWriter writer;
   //writer.write ("projection.pcd", *cloud_projected, false);
-  writer.write ("hull.pcd", *cloud_hull, false);
+  writer.write ("output/hull.pcd", *cloud_hull, false);
 
   std::ofstream outFile;
-  outFile.open("pointVector.csv");
+  outFile.open("output/pointVector.csv");
   outFile << "x,y\n";
   for (int i = 0; i < cloud_hull->points.size(); i++) {
     pcl::PointXYZ p = cloud_hull->points[i];
