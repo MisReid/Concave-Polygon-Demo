@@ -47,10 +47,12 @@ main (int argc, char* argv[])
   std::cerr << "Concave hull has: " << cloud_hull->size ()
             << " data points." << std::endl;
 
+  // Write hull to pcd
   pcl::PCDWriter writer;
-  //writer.write ("projection.pcd", *cloud_projected, false);
+  //writer.write ("output/projection.pcd", *cloud_projected, false);
   writer.write ("output/hull.pcd", *cloud_hull, false);
 
+  // Save hull vector to csv
   std::ofstream outFile;
   outFile.open("output/pointVector.csv");
   outFile << "x,y\n";
@@ -60,6 +62,8 @@ main (int argc, char* argv[])
   }
   outFile.close();
 
+  // Visualisation
+  // ref: https://pcl.readthedocs.io/projects/tutorials/en/master/pcl_visualizer.html
   pcl::visualization::PCLVisualizer::Ptr viewer (new pcl::visualization::PCLVisualizer ("3D Viewer"));
   viewer->setWindowName("Concave Hull Viewer");
   viewer->setBackgroundColor (0, 0, 0);
